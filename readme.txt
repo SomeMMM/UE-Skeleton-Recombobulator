@@ -17,25 +17,25 @@ SETUP:
 
 METHODS:
 
-deleteBones(skeletalMeshNames, boneNames, loneBoneNames): #Delete bones function, remove comments at beginning & end to automate loading settings & LOD regeneration.
+deleteBones(skeletalMeshNames, boneNames, loneBoneNames) #Delete bones function, remove comments at beginning & end to automate loading settings & LOD regeneration.
 	read attached file "bonedeletionorder.txt"
 		*lone bones are bones that, when deleted, will leave behind vertecies with no weight. This causes UE to normalize them (1,1,1) to the Root bone.
 		*lone bones have their vertex skin weights copied to the closest parent bone not being deleted.
 
-deleteLODs(skeletalMeshNames, LODs): #deletes LODs on the skeletal mesh names. LODs positional is count, not index.
+deleteLODs(skeletalMeshNames, LODs) #deletes LODs on the skeletal mesh names. LODs positional is count, not index.
 	"skel.deleteLODs("f_med_nrw_body", [1, 2, 3, 4])"	
 		
-regenerateLODs(skeletalMeshNames, LODs): #regenerates LODs on the skeletal mesh names. LODs positional is count, not index.
+regenerateLODs(skeletalMeshNames, LODs) #regenerates LODs on the skeletal mesh names. LODs positional is count, not index.
 	"skel.regenerateLODs("f_med_nrw_body", [1, 2, 3, 4])"
 	
-flushLODs(skeletalMeshNames, LODs): #deletes & regenerates LODs on the skeletal mesh names. LODs positional is count, not index.
+flushLODs(skeletalMeshNames, LODs) #deletes & regenerates LODs on the skeletal mesh names. LODs positional is count, not index.
 	"skel.flushLODs("f_med_nrw_body", [1, 2, 3, 4])"
 	
-saveLODSettings(): #saves selected LOD Data Asset into .txt file.
+saveLODSettings() #saves selected LOD Data Asset into .txt file.
 	"skel.saveLODSettings()"
 	
-loadLODSettings(): #loads .txt file into selected LOD Data Asset. May trigger forced LOD regeneration.
+loadLODSettings() #loads .txt file into selected LOD Data Asset. May trigger forced LOD regeneration.
 	"skel.loadLODSettings()"
 	
-def loadLODSettingsListOnly(): #loads .txt file into selected LOD Data Asset. Only the bone list & bones to prioritize to avoid forced LOD regeneration.
+loadLODSettingsListOnly() #loads .txt file into selected LOD Data Asset. Only the bone list & bones to prioritize to avoid forced LOD regeneration.
 	"skel.loadLODSettingsListOnly()"	
