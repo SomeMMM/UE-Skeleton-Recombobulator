@@ -17,10 +17,11 @@ SETUP:
 
 METHODS:
 
-deleteBones(skeletalMeshNames, boneNames, loneBoneNames) #Delete bones function, remove comments at beginning & end to automate loading settings & LOD regeneration.
-	read attached file "bone deletion order.txt" for specifics.
-		*lone bones are bones that, when deleted, will leave behind vertecies with no weight. This causes UE to normalize them (1,1,1) to the Root bone.
-		*lone bones have their vertex skin weights copied to the closest parent bone not being deleted.
+deleteBones(skeletalMeshNames, boneNames, loneBoneNames) #Delete bones function
+	Read attached file "bone deletion order.txt" for specifics.
+	Remove comments at beginning & end to automate loading settings & LOD regeneration.
+		Lone bones are bones that, when deleted, will leave behind vertices with no skeletal mesh skin weights. This causes UE to normalize them (1,1,1) to the Root bone.
+		Lone bones have their vertex skin weights copied to the closest parent bone not being deleted.
 
 deleteLODs(skeletalMeshNames, LODs) #deletes LODs on the skeletal mesh names. LODs positional is count, not index.
 	"skel.deleteLODs("f_med_nrw_body", [1, 2, 3, 4])"	
