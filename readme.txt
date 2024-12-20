@@ -1,3 +1,5 @@
+WARNING: My code documentation is a bit messy at times, but it is there. You should be able to figure it out given patience and basic Python understanding.
+
 *The following Python Statement examples will need to be edited depending on your UE Python folder settings.
 *My python location was in UE settings @ ../UnrealProjects/Python/Skeleton1.py
 
